@@ -1,13 +1,17 @@
-/* Add this at the beginning of your CSS file */
+/* Add Google Fonts at the top of your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
 
 :root {
-    --primary-color: #1e3d59;
-    --secondary-color: #ff6b6b;
-    --background-color: #f5f5f5;
-    --text-color: #333;
+    --primary-color: #1a1a1a;
+    --secondary-color: #ff4d4d;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-color: #ffffff;
+    --text-secondary: #a0a0a0;
 }
 
 * {
@@ -17,7 +21,7 @@ html {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -25,6 +29,7 @@ body {
 
 header {
     background-color: var(--primary-color);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -42,7 +47,8 @@ nav {
 .logo {
     color: white;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: -1px;
 }
 
 nav ul {
@@ -69,7 +75,6 @@ main {
     margin-right: auto;
 }
 
-/* Add this to enhance the spacing between sections */
 section {
     padding: 80px 0;
     min-height: 100vh;
@@ -77,18 +82,177 @@ section {
     flex-direction: column;
     justify-content: center;
 }
+  #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem;
+  }
 
-#hero {
+  .hero-content {
+      max-width: 1000px;
+      width: 100%;
+  }
+
+  .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, var(--text-color), var(--secondary-color));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }
+
+  .tagline {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 3rem;
+  }
+
+  .featured-episode {
+      background: var(--card-background);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  #about {
+    padding: 6rem 2rem;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-container h2 {
     text-align: center;
-    padding: 4rem 0;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
 }
 
-#hero h1 {
-    font-size: 3rem;
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.show-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.show-description p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.hosts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.host-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: transform 0.3s ease;
+}
+
+.host-card:hover {
+    transform: translateY(-5px);
+}
+
+.host-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.host-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.host-info {
+    padding: 1.5rem;
+}
+
+.host-info h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.host-title {
+    color: var(--secondary-color);
+    font-weight: 500;
     margin-bottom: 1rem;
-    color: var(--primary-color);
 }
 
+.host-bio {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .hosts-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+  .latest-badge {
+      background: var(--secondary-color);
+      color: var(--text-color);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: inline-block;
+      margin-bottom: 1rem;
+  }
+
+  .episode-info h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+  }
+
+  .episode-meta {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+  }
+
+  .player-container {
+      margin-top: 2rem;
+  }
+
+  .player-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+  }
+
+  .player-placeholder:hover {
+      background: rgba(255,255,255,0.15);
+  }
+
+  .player-placeholder i {
+      font-size: 2rem;
+      color: var(--secondary-color);
+  }
 .episode-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -96,8 +260,35 @@ section {
     padding: 2rem 0;
 }
 
+.episode-card {
+    background: var(--card-background);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.episode-meta {
+    color: var(--text-secondary);
+}
+
+.episode-description {
+    color: var(--text-secondary);
+}
+
+.blog-post {
+    background: var(--card-background);
+}
+
+.post-meta {
+    color: var(--text-secondary);
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
 footer {
     background-color: var(--primary-color);
+    border-top: 1px solid rgba(255,255,255,0.1);
     color: white;
     padding: 2rem;
     text-align: center;
